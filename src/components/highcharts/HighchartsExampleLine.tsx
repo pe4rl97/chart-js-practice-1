@@ -1,8 +1,20 @@
 import React from "react";
-import Highcharts from "highcharts";
+import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import Exporting from "highcharts/modules/exporting"
+import ExportData from "highcharts/modules/export-data";
+import Accessibility from "highcharts/modules/accessibility";
+import OfflineExporting from "highcharts/modules/offline-exporting.js"
 
-const HighchartsExampleLine:React.FC = () => {
+console.log(typeof Exporting)
+console.log(typeof Accessibility)
+console.log(typeof ExportData)
+console.log(typeof OfflineExporting)
+// let Exporting1;
+// Exporting1 = Exporting;
+// Exporting(Highcharts);
+
+const HighchartsExampleLine: React.FC = () => {
   const options = {
     title: {
       text: "Frontend Framework Popularity (2017-2022)",
@@ -41,23 +53,7 @@ const HighchartsExampleLine:React.FC = () => {
       },
     ],
     exporting: {
-      enabled: true, // Enables the export/download button
-      buttons: {
-        contextButton: {
-          menuItems: [
-            "viewFullscreen",
-            "printChart",
-            "separator",
-            "downloadPNG",
-            "downloadJPEG",
-            "downloadPDF",
-            "downloadSVG",
-            "separator",
-            "downloadCSV",
-            "downloadXLS",
-          ],
-        },
-      },
+      enabled: true, // Enables exporting options
     },
   };
 
